@@ -78,27 +78,22 @@
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
       text-decoration: none;
     }
-    .nav-logo-mark {
-      width: 34px; height: 34px;
-      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 900;
-      font-size: 14px;
-      color: #fff;
-      letter-spacing: -0.5px;
-      box-shadow: 0 2px 8px rgba(20,82,20,0.25);
+    .nav-logo-img {
+      height: 32px;
+      width: auto;
+      display: block;
     }
-    .nav-logo-text {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.3px;
+    .nav-logo-img-symbol {
+      height: 34px;
+      width: auto;
+      display: none;
     }
-    .nav-logo-text span { color: var(--green); }
+    @media (max-width: 480px) {
+      .nav-logo-img { display: none; }
+      .nav-logo-img-symbol { display: block; }
+    }
 
     .nav-links {
       display: flex;
@@ -1286,8 +1281,16 @@
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="https://neuralogicgroup.com" class="nav-logo">
-        <div class="nav-logo-mark">NL</div>
-        <span class="nav-logo-text">Neuralogic <span>Group</span></span>
+        <img
+          class="nav-logo-img"
+          src="https://cdn.prod.website-files.com/694abaffc39723ae9d267dcc/694b09770ce6b2e4c05cc262_Neuralogic%20Logo.svg"
+          alt="Neuralogic Group"
+        />
+        <img
+          class="nav-logo-img-symbol"
+          src="https://cdn.prod.website-files.com/694abaffc39723ae9d267dcc/694ea20b589fe0541222a575_Neuralogic%20Symbol%20Logo.svg"
+          alt="Neuralogic Group"
+        />
       </a>
       <ul class="nav-links">
         <li><a href="#crisis">The Problem</a></li>
@@ -2041,8 +2044,11 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="https://neuralogicgroup.com" class="nav-logo">
-            <div class="nav-logo-mark">NL</div>
-            <span class="nav-logo-text">Neuralogic <span>Group</span></span>
+            <img
+              src="https://cdn.prod.website-files.com/694abaffc39723ae9d267dcc/694b09770ce6b2e4c05cc262_Neuralogic%20Logo.svg"
+              alt="Neuralogic Group"
+              style="height:28px; width:auto; display:block;"
+            />
           </a>
           <p>Neuralogic Group builds fully custom, single-tenant Autonomous Digital Employees that replace entire back-office roles end-to-end. No SaaS. No shared infrastructure. No shortcuts.</p>
         </div>
