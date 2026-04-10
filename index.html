@@ -479,6 +479,229 @@
     .industry-link:hover { color: var(--text); border-color: #bbb; box-shadow: var(--shadow-sm); }
     .industry-link.current { color: var(--green); border-color: var(--green-border); background: var(--green-light); }
 
+    /* ─── ANALYTICS ─── */
+    #analytics {
+      background: #0f1a0f;
+      padding: 88px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    #analytics::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 15% 50%, rgba(30,107,30,0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 85% 50%, rgba(30,107,30,0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .analytics-header {
+      text-align: center;
+      margin-bottom: 56px;
+      position: relative;
+      z-index: 1;
+    }
+    .analytics-header .section-label { color: #52b852; }
+    .analytics-header h2 {
+      font-size: clamp(26px, 4vw, 46px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .analytics-header h2 span { color: #52b852; }
+    .analytics-header p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Column headers */
+    .analytics-col-headers {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 10px;
+      padding: 0 2px;
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .analytics-col-label {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 10px 0;
+      border-radius: 8px 8px 0 0;
+    }
+    .analytics-col-label.metric-col { color: rgba(255,255,255,0.3); text-align: left; }
+    .analytics-col-label.ade-col {
+      background: rgba(30,107,30,0.35);
+      border: 1px solid rgba(82,184,82,0.25);
+      border-bottom: none;
+      color: #7dd87d;
+    }
+    .analytics-col-label.human-col {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-bottom: none;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* Rows */
+    .analytics-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .analytics-row {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.2s;
+    }
+    .analytics-row:last-child { border-bottom: none; }
+    .analytics-row:hover { background: rgba(255,255,255,0.02); }
+
+    .analytics-cell {
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .analytics-cell.metric-name {
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    .analytics-cell.metric-name h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 3px;
+      line-height: 1.3;
+    }
+    .analytics-cell.metric-name p {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.4;
+    }
+
+    .analytics-cell.ade-cell {
+      background: rgba(30,107,30,0.12);
+      border-right: 1px solid rgba(82,184,82,0.12);
+      text-align: center;
+      align-items: center;
+    }
+    .analytics-cell.human-cell {
+      text-align: center;
+      align-items: center;
+    }
+
+    .analytics-num {
+      font-size: clamp(22px, 2.8vw, 34px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .analytics-num.good { color: #52b852; }
+    .analytics-num.bad { color: #e07070; }
+
+    .analytics-verdict {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 2px;
+    }
+    .analytics-verdict.win {
+      background: rgba(82,184,82,0.15);
+      color: #7dd87d;
+    }
+    .analytics-verdict.loss {
+      background: rgba(224,112,112,0.12);
+      color: #e07070;
+    }
+
+    /* Bottom CTA bar */
+    .analytics-footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 36px;
+      padding: 24px 32px;
+      background: rgba(30,107,30,0.15);
+      border: 1px solid rgba(82,184,82,0.2);
+      border-radius: 12px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .analytics-footer-bar p {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+    }
+    .analytics-footer-bar p span { color: #52b852; }
+    .analytics-footer-bar small {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.45);
+      margin-top: 3px;
+    }
+    .btn-analytics {
+      background: #1e6b1e;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      border: 1px solid rgba(82,184,82,0.3);
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .btn-analytics:hover { background: #145214; }
+
+    @media (max-width: 768px) {
+      .analytics-col-headers { grid-template-columns: 1.2fr 1fr 1fr; }
+      .analytics-row { grid-template-columns: 1.2fr 1fr 1fr; }
+      .analytics-cell { padding: 14px 14px; }
+      .analytics-cell.metric-name h4 { font-size: 12.5px; }
+      .analytics-num { font-size: 22px; }
+      .analytics-footer-bar { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 540px) {
+      .analytics-col-headers,
+      .analytics-row { grid-template-columns: 1fr 1fr 1fr; }
+      .analytics-cell.metric-name p { display: none; }
+    }
+
     /* ─── CRISIS ─── */
     #crisis { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
@@ -1402,6 +1625,155 @@
       <a href="https://www.neuralogicgroup.com/industries" class="industry-link" target="_blank" rel="noopener">View All Industries →</a>
     </div>
   </div>
+
+  <!-- ─── ANALYTICS ─── -->
+  <section id="analytics">
+
+    <div class="analytics-header">
+      <span class="section-label">ADE vs. Human Employee — By the Numbers</span>
+      <h2>The Performance Gap Is <span>Not Marginal.</span></h2>
+      <p>These aren't projections. This is what systematized collections looks like compared to a generalist employee managing AR between five other responsibilities.</p>
+    </div>
+
+    <div class="analytics-col-headers">
+      <div class="analytics-col-label metric-col">Metric</div>
+      <div class="analytics-col-label ade-col">★ Neuralogic ADE</div>
+      <div class="analytics-col-label human-col">Human Employee</div>
+    </div>
+
+    <div class="analytics-rows">
+
+      <div class="analytics-row">
+        <div class="analytics-cell metric-name">
+          <h4>Days Sales Outstanding (DSO)</h4>
+          <p>Average days to collect payment after invoice date</p>
+        </div>
+        <div class="analytics-cell ade-cell">
+          <div class="analytics-num good" data-count-to="28" data-suffix=" Days">28 Days</div>
+          <span class="analytics-verdict win">Best-in-class</span>
+        </div>
+        <div class="analytics-cell human-cell">
+          <div class="analytics-num bad">45–65 Days</div>
+          <span class="analytics-verdict loss">2× slower</span>
+        </div>
+      </div>
+
+      <div class="analytics-row">
+        <div class="analytics-cell metric-name">
+          <h4>Accounts Worked Per Day</h4>
+          <p>Outstanding accounts actively contacted or escalated</p>
+        </div>
+        <div class="analytics-cell ade-cell">
+          <div class="analytics-num good" data-count-to="500" data-suffix="+">500+</div>
+          <span class="analytics-verdict win">Every account, every day</span>
+        </div>
+        <div class="analytics-cell human-cell">
+          <div class="analytics-num bad">18–25</div>
+          <span class="analytics-verdict loss">Most accounts untouched</span>
+        </div>
+      </div>
+
+      <div class="analytics-row">
+        <div class="analytics-cell metric-name">
+          <h4>Collections Follow-Through Rate</h4>
+          <p>% of past-due accounts that receive consistent follow-up</p>
+        </div>
+        <div class="analytics-cell ade-cell">
+          <div class="analytics-num good" data-count-to="100" data-suffix="%">100%</div>
+          <span class="analytics-verdict win">Zero accounts skipped</span>
+        </div>
+        <div class="analytics-cell human-cell">
+          <div class="analytics-num bad">38%</div>
+          <span class="analytics-verdict loss">62% of AR left to age</span>
+        </div>
+      </div>
+
+      <div class="analytics-row">
+        <div class="analytics-cell metric-name">
+          <h4>Annual Write-Off Rate</h4>
+          <p>Revenue permanently lost to uncollected receivables</p>
+        </div>
+        <div class="analytics-cell ade-cell">
+          <div class="analytics-num good">&lt;0.3%</div>
+          <span class="analytics-verdict win">Near-zero leakage</span>
+        </div>
+        <div class="analytics-cell human-cell">
+          <div class="analytics-num bad">3–8%</div>
+          <span class="analytics-verdict loss">$240K–$640K on $8M revenue</span>
+        </div>
+      </div>
+
+      <div class="analytics-row">
+        <div class="analytics-cell metric-name">
+          <h4>Operational Availability</h4>
+          <p>Days per year the role is actively working accounts</p>
+        </div>
+        <div class="analytics-cell ade-cell">
+          <div class="analytics-num good" data-count-to="365" data-suffix=" Days">365 Days</div>
+          <span class="analytics-verdict win">No PTO, no sick days</span>
+        </div>
+        <div class="analytics-cell human-cell">
+          <div class="analytics-num bad">245 Days</div>
+          <span class="analytics-verdict loss">120 days of coverage gaps/yr</span>
+        </div>
+      </div>
+
+      <div class="analytics-row">
+        <div class="analytics-cell metric-name">
+          <h4>Cost Per Dollar Recovered</h4>
+          <p>Total role cost ÷ total receivables collected</p>
+        </div>
+        <div class="analytics-cell ade-cell">
+          <div class="analytics-num good">$0.04</div>
+          <span class="analytics-verdict win">Per dollar recovered</span>
+        </div>
+        <div class="analytics-cell human-cell">
+          <div class="analytics-num bad">$0.28</div>
+          <span class="analytics-verdict loss">7× more expensive</span>
+        </div>
+      </div>
+
+      <div class="analytics-row">
+        <div class="analytics-cell metric-name">
+          <h4>Turnover Risk (3-Year)</h4>
+          <p>Probability the role becomes vacant within 36 months</p>
+        </div>
+        <div class="analytics-cell ade-cell">
+          <div class="analytics-num good" data-count-to="0" data-suffix="%">0%</div>
+          <span class="analytics-verdict win">Permanent deployment</span>
+        </div>
+        <div class="analytics-cell human-cell">
+          <div class="analytics-num bad">67%</div>
+          <span class="analytics-verdict loss">Admin role avg. tenure: 2.4 yrs</span>
+        </div>
+      </div>
+
+      <div class="analytics-row">
+        <div class="analytics-cell metric-name">
+          <h4>Time to Full Productivity</h4>
+          <p>Days until the role is performing at full capacity</p>
+        </div>
+        <div class="analytics-cell ade-cell">
+          <div class="analytics-num good">Day 1</div>
+          <span class="analytics-verdict win">Live at go-live</span>
+        </div>
+        <div class="analytics-cell human-cell">
+          <div class="analytics-num bad">90–120 Days</div>
+          <span class="analytics-verdict loss">3–4 months of ramp cost</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="analytics-footer-bar">
+      <div>
+        <p>An ADE works <span>20× more accounts</span> per day, collects <span>7× cheaper</span>, and never leaves.
+        <small>Based on agriculture industry benchmarks and Neuralogic ADE deployment outcomes.</small></p>
+      </div>
+      <a href="#contact" class="btn-analytics">See What This Means for Your Operation →</a>
+    </div>
+
+  </section>
 
   <!-- ─── CRISIS ─── -->
   <section id="crisis">
