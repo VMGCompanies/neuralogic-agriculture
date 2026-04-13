@@ -1256,116 +1256,109 @@
 
     /* ─── CTA / CONTACT ─── */
     #contact {
-      background: var(--bg-alt);
-      border-top: 1px solid var(--border);
-      padding-bottom: 0;
+      background: #0f1f1a;
+      padding: 96px 24px 80px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 0%, rgba(30,107,30,0.22) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 20% 100%, rgba(30,107,30,0.10) 0%, transparent 60%);
+      pointer-events: none;
     }
 
-    .cta-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .cta-left h2 {
-      font-size: clamp(24px, 3.3vw, 40px);
-      font-weight: 900;
-      color: var(--text);
-      letter-spacing: -1.2px;
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-    .cta-left p { font-size: 15.5px; color: var(--text-sec); line-height: 1.75; margin-bottom: 36px; }
-
-    .cta-trust-items { display: flex; flex-direction: column; gap: 12px; }
-    .cta-trust-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      color: var(--text-sec);
-    }
-    .cta-trust-check {
-      width: 22px; height: 22px;
-      background: var(--green-light);
-      border: 1.5px solid var(--green-border);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+    .cta-eyebrow {
       font-size: 11px;
-      font-weight: 800;
-      color: var(--green);
-      flex-shrink: 0;
-    }
-
-    /* Form */
-    #contact-form {
-      background: #fff;
-      border: 1.5px solid var(--border);
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: var(--shadow-lg);
-    }
-    #contact-form h3 { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
-    #contact-form .form-sub { font-size: 13.5px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.6; }
-
-    .form-group { margin-bottom: 17px; }
-    .form-group label {
-      display: block;
-      font-size: 12px;
       font-weight: 700;
-      color: var(--text-sec);
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 7px;
+      color: rgba(82,184,82,0.8);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
     }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      background: var(--bg-alt);
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      padding: 11px 14px;
-      font-size: 14px;
-      font-family: var(--font);
-      color: var(--text);
-      transition: border-color 0.2s, box-shadow 0.2s;
-      outline: none;
-      resize: vertical;
+    .cta-headline {
+      font-size: clamp(26px, 4vw, 48px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
     }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(30,107,30,0.08);
-      background: #fff;
+    .cta-headline span { color: #52b852; }
+    .cta-subline {
+      font-size: 17px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 44px;
+      position: relative;
+      z-index: 1;
     }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--text-faint); }
-    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
-    .form-submit {
-      width: 100%;
+    .cta-demo-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       background: var(--green);
       color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 14px 24px;
-      font-size: 14.5px;
+      padding: 18px 40px;
+      border-radius: 10px;
+      font-size: 17px;
       font-weight: 700;
       font-family: var(--font);
+      text-decoration: none;
+      border: none;
       cursor: pointer;
-      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-      margin-top: 6px;
-      box-shadow: 0 2px 12px rgba(20,82,20,0.22);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(20,82,20,0.35);
+      position: relative;
+      z-index: 1;
     }
-    .form-submit:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(20,82,20,0.28); }
-    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .cta-demo-btn:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(20,82,20,0.45); }
 
-    .form-success { display: none; text-align: center; padding: 40px 20px; }
-    .form-success.visible { display: block; }
-    .form-success-icon { font-size: 48px; margin-bottom: 16px; }
-    .form-success h4 { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
-    .form-success p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .cta-micro {
+      margin-top: 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-badges {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 52px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      position: relative;
+      z-index: 1;
+    }
+    .cta-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+    }
+    .cta-badge::before {
+      content: '★';
+      color: #52b852;
+      font-size: 11px;
+    }
+
+    @media (max-width: 600px) {
+      .cta-badges { gap: 20px; }
+      .cta-badge { font-size: 12px; }
+    }
 
     /* ─── FOOTER ─── */
     footer {
@@ -2339,79 +2332,22 @@
     </div>
   </section>
 
-  <!-- ─── CTA + FORM ─── -->
-  <section id="contact" style="padding-bottom:0;">
-    <div class="container">
-      <div class="cta-grid">
-        <div class="cta-left">
-          <span class="section-label">Ready to Stop the Bleeding</span>
-          <h2>Your AR Backlog Has a Cost. Let's Quantify It.</h2>
-          <p>Neuralogic offers a no-commitment AR Diagnostic for qualifying agriculture operations. We'll calculate your current DSO cost, estimate your write-off exposure, and show you exactly what an ADE deployment would recover in year one.</p>
-          <div class="cta-trust-items">
-            <div class="cta-trust-item">
-              <div class="cta-trust-check">✓</div>
-              Fully custom — no SaaS subscription, no shared infrastructure
-            </div>
-            <div class="cta-trust-item">
-              <div class="cta-trust-check">✓</div>
-              Single-tenant deployment — your data never leaves your environment
-            </div>
-            <div class="cta-trust-item">
-              <div class="cta-trust-check">✓</div>
-              8-week average deployment from signed agreement to live system
-            </div>
-            <div class="cta-trust-item">
-              <div class="cta-trust-check">✓</div>
-              Operational from day one — no multi-month onboarding process
-            </div>
-            <div class="cta-trust-item">
-              <div class="cta-trust-check">✓</div>
-              Zero turnover risk — your ADE doesn't leave, burn out, or take PTO
-            </div>
-          </div>
-        </div>
-
-        <div id="contact-form">
-          <h3>Schedule a Demo</h3>
-          <p class="form-sub">Talk directly with a Neuralogic solutions architect. No sales pitch — just an honest assessment of whether an ADE is the right fit for your operation.</p>
-          <form id="demo-form" novalidate>
-            <div class="form-grid-2">
-              <div class="form-group">
-                <label for="f-name">First Name</label>
-                <input type="text" id="f-name" name="first_name" placeholder="John" required />
-              </div>
-              <div class="form-group">
-                <label for="f-lname">Last Name</label>
-                <input type="text" id="f-lname" name="last_name" placeholder="Deere" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="f-company">Company / Operation Name</label>
-              <input type="text" id="f-company" name="company" placeholder="Heartland Grain &amp; Supply Co." required />
-            </div>
-            <div class="form-grid-2">
-              <div class="form-group">
-                <label for="f-phone">Phone</label>
-                <input type="tel" id="f-phone" name="phone" placeholder="(312) 555-0142" required />
-              </div>
-              <div class="form-group">
-                <label for="f-email">Email</label>
-                <input type="email" id="f-email" name="email" placeholder="john@heartlandgrain.com" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="f-ar">What's your biggest AR challenge?</label>
-              <textarea id="f-ar" name="ar_challenge" rows="4" placeholder="Describe your current AR situation — e.g., seasonal collection pileup, high write-off rate, staff turnover, slow customer payment habits..."></textarea>
-            </div>
-            <button type="submit" class="form-submit">Request My AR Diagnostic →</button>
-          </form>
-          <div class="form-success" id="form-success">
-            <div class="form-success-icon">✅</div>
-            <h4>We'll be in touch within one business day.</h4>
-            <p>A Neuralogic solutions architect will review your submission and reach out directly to schedule your AR Diagnostic. In the meantime, explore the ADE lineup above to identify other roles that may be driving undetected costs in your operation.</p>
-          </div>
-        </div>
-      </div>
+  <!-- ─── CTA ─── -->
+  <section id="contact">
+    <div class="cta-eyebrow">Agriculture — Autonomous Digital Employees</div>
+    <h2 class="cta-headline">Stop Losing Cash to a Role<br/>That <span>Doesn't Have to Be Human.</span></h2>
+    <p class="cta-subline">30-minute strategy call. Zero obligation.</p>
+    <a href="https://www.neuralogicgroup.com/contact-us" target="_blank" rel="noopener" class="cta-demo-btn">
+      Schedule Your Demo
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <p class="cta-micro">A Neuralogic solutions architect will reach out within one business day.</p>
+    <div class="cta-badges">
+      <span class="cta-badge">Fully Custom &amp; Single-Tenant</span>
+      <span class="cta-badge">Your Data Stays On-Premise</span>
+      <span class="cta-badge">You Own the IP</span>
+      <span class="cta-badge">Zero Turnover Risk</span>
+      <span class="cta-badge">8-Week Deployment</span>
     </div>
   </section>
 
